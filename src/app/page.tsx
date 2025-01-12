@@ -1,7 +1,7 @@
 import { SignedIn, SignedOut } from "@clerk/nextjs";
 import { db } from "~/server/db";
 
-export const revalidate = 0;
+export const dynamic = "force-dynamic";
 
 async function Images() {
   const images = await db.query.images.findMany({
@@ -10,14 +10,14 @@ async function Images() {
 
   return (
     <div className="flex flex-wrap gap-4">
-      {images.map((image, index) => (
-        <div key={image.id + "-" + index} className="flex h-48 w-48 flex-col">
+      {images.map((image) => (
+        <div key={image.id} className="flex h-48 w-48 flex-col">
           <img
             src={image.url}
             alt="image"
             className="h-full w-full object-cover"
           />
-          <div>{image.name}</div>
+          <div>{image.id}</div>
         </div>
       ))}
     </div>
