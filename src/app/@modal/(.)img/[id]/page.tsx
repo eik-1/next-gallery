@@ -1,19 +1,18 @@
-import Image from "next/image";
-import { getImage } from "~/server/queries";
+import FullPageImageView from "~/components/full-image-page";
+import { Modal } from "./modal";
 
-export default async function PhotoModal({
+export default function PhotoModal({
   params,
 }: {
   params: {
     id: string;
   };
 }) {
-  const { id: photoId } = await params;
+  const { id: photoId } = params;
   const idAsNum = Number(photoId);
-  const image = await getImage(idAsNum);
   return (
-    <div className="flex justify-center">
-      <Image src={image.url} alt={image.name} width={300} height={300} />
-    </div>
+    <Modal>
+      <FullPageImageView id={idAsNum} />
+    </Modal>
   );
 }
