@@ -5,6 +5,7 @@ import { type Metadata } from "next";
 import { extractRouterConfig } from "uploadthing/server";
 
 import "@uploadthing/react/styles.css";
+import React from "react";
 import "~/styles/globals.css";
 import TopNav from "./_components/TopNav";
 import { ourFileRouter } from "./api/uploadthing/core";
@@ -17,7 +18,11 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{ children: React.ReactNode }>) {
+  modal,
+}: {
+  children: React.ReactNode;
+  modal?: React.ReactNode;
+}) {
   return (
     <ClerkProvider>
       <html lang="en">
@@ -25,6 +30,8 @@ export default function RootLayout({
           <NextSSRPlugin routerConfig={extractRouterConfig(ourFileRouter)} />
           <TopNav />
           {children}
+          {modal}
+          <div id="modal-root" />
         </body>
       </html>
     </ClerkProvider>
