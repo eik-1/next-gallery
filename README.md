@@ -12,7 +12,7 @@
 - [x] Use next/image component
 - [x] Error Management (w/ sentry)
 - [x] Routing/Image page
-- [ ] Use ShadCN Components (toast)
-- [ ] Delete Button (with server actions)
-- [ ] Analytics (w/ posthog)
+- [x] Use ShadCN Components (toast)
+- [x] Delete Button (with server actions)
+- [x] Analytics (w/ posthog)
 - [ ] Ratelimiting (w/ upstash)
