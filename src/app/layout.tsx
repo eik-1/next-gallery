@@ -6,6 +6,7 @@ import { extractRouterConfig } from "uploadthing/server";
 
 import "@uploadthing/react/styles.css";
 import React from "react";
+import { Toaster } from "sonner";
 import "~/styles/globals.css";
 import TopNav from "./_components/TopNav";
 import { ourFileRouter } from "./api/uploadthing/core";
@@ -34,6 +35,7 @@ export default function RootLayout({
           </div>
           {modal}
           <div id="modal-root" />
+          <Toaster />
         </body>
       </html>
     </ClerkProvider>
