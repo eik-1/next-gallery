@@ -15,4 +15,4 @@
 - [x] Use ShadCN Components (toast)
 - [x] Delete Button (with server actions)
 - [x] Analytics (w/ posthog)
-- [ ] Ratelimiting (w/ upstash)
+- [x] Ratelimiting (w/ upstash)
